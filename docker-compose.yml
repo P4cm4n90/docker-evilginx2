@@ -7,15 +7,13 @@ services:
       dockerfile: Dockerfile
     container_name: evilginx2
     ports:
-      - 80:80/tcp
-      - 443:443/tcp
-      - 53:53/udp
-    command: ["/bin/bash"]
-    #command: ["/bin/evilginx", "-p", "/app/phishlets", "-debug", "-developer"]
+      - 8080:80/tcp
+      - 8443:443/tcp
+    #command: ["/bin/bash"]
+    command: ["/bin/evilginx", "-p", "/app/phishlets", "-debug"]
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-      - ./app/:/root/.evilginx
-      - ./app/phishlets:/app/phishlets
+      - /usr/share/evilginx2/phishlets:/app/phishlets
     stdin_open: true
     tty: true
