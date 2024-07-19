@@ -10,10 +10,12 @@ services:
       - 8080:80/tcp
       - 8443:443/tcp
     #command: ["/bin/bash"]
-    command: ["/bin/evilginx", "-p", "/app/phishlets", "-debug"]
+    #command: ["/bin/evilginx", "-p", "/app/phishlets", "-debug"]
     volumes:
+      - "./docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh"
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - /usr/share/evilginx2/phishlets:/app/phishlets
-    stdin_open: true
-    tty: true
+    entrypoint: ["/usr/local/bin/docker-entrypoint.sh"]
+    #stdin_open: true
+    #tty: true
