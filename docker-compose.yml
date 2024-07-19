@@ -9,7 +9,7 @@ services:
     ports:
       - 8080:80/tcp
       - 8443:443/tcp
-    #command: ["/bin/bash"]
+    command: ["/bin/bash"]
     #command: ["/bin/evilginx", "-p", "/app/phishlets", "-debug"]
     volumes:
       - "./docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh"
