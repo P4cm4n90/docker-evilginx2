@@ -13,6 +13,7 @@ services:
     #command: ["/bin/evilginx", "-p", "/app/phishlets", "-debug"]
     volumes:
       - "./docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh"
+      - "./app/blacklist.txt:/root/.evilginx/blacklist.txt"
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - /usr/share/evilginx2/phishlets:/app/phishlets
