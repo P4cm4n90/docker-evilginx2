@@ -1,4 +1,4 @@
 #!/bin/sh
 
 echo "Starting Evilginx2..."
-/bin/evilginx -p /app/phishlets -debug
+exec /bin/evilginx -p /app/phishlets -debug
