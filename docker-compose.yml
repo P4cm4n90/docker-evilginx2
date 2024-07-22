@@ -15,7 +15,7 @@ services:
       - "./docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh"
       - "./app/blacklist.txt:/app/blacklist.txt"
       - "./app/config.json:/app/config.json"
-      - "/root/.local/share/certmagic:/root/.local/share/certmagic"
+      - "./app/crt:/root/.local/share/certmagic"
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - /usr/share/evilginx2/phishlets:/app/phishlets
