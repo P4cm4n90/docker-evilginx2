@@ -10,25 +10,8 @@
 
 ```shell
 cd ./docker-evilginx2
-docker-compose up -d
-docker-compose down
-```
-
-### Get a bash shell in the container
-
-```shell
-docker exec -it evilginx2 /bin/bash
-```
-
-### Run Evilginx2 in the running container using developer and debug mode
-```shell
-bash-5.1# evilginx -p /app/phishlets/ -developer -debug
-```
-
-### Evilginx2 Config
-
-```shell
-./docker-evilginx2/app/
+docker-compose build
+docker-compose run --service-ports evilginx2
 ```
 
 ### Display Evilginx2 container logs
